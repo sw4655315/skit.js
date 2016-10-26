@@ -225,6 +225,9 @@ var sdate = {};
         ,daysBetween:daysBetween
     }
 })()
+
+
+
 var smath = {};
 ;(function() {
     "use strict";
@@ -338,11 +341,10 @@ var smath = {};
     };
 
     smath = {
-        add:add
-        ,sub:sub
-        ,mul:mul
-        ,div:div
-        ,format:format
+    	add:add
+    	,sub:sub
+    	,mul:mul
+    	,div:div
+    	,format:format
     }
 })()
-
