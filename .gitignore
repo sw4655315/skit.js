@@ -1,5 +1,5 @@
 # Specifies intentionally untracked files to ignore when using Git
 # http://git-scm.com/docs/gitignore
 
-yuicompressor-2.4.2.jar
-压缩命令.txt
+#yuicompressor-2.4.2.jar
+#压缩命令.txt

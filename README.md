@@ -81,27 +81,53 @@ sdate.format(new Date(),'yyyy-MM-dd HH:mm:ss') //2016-10-10 10:10:10
 // 日期加减 
 //sdate.dateAdd(date,strInterval,Number)
 // date : 日期基数
-// W/w 星期  
-// dd/DD/d/D 日期  
-// hh/HH/h/H 时间  
-// mm/m 分钟  
-// ss/SS/s/S 秒  
-sdate.format(date,pattern)
-sdate.format(new Date(),'yyyy-MM-dd HH:mm:ss') //2016-10-10 10:10:10
+// strInterval : 
+   's': 秒
+   'n': 分
+   'h': 时
+   'd': 天
+   'w': 周
+   'q': 季【三个月】
+   'm': 月
+   'y': 年
+// Number : 加的数量 【负数为减】
 ```
 - daysBetween
 
 ```
-//| 求两个时间的天数差 日期格式为 YYYY-MM-dd
-sdate.format(date,pattern)
-sdate.format(new Date(),'yyyy-MM-dd HH:mm:ss') //2016-10-10 10:10:10
+//| 求两个时间的【天数差】 日期格式为 YYYY-MM-dd
+sdate.daysBetween(DateOne, DateTwo)
 ```
 - dateDiff
-    //| 比较日期差 dtEnd 格式为日期型或者有效日期格式字符串
+
+```
+//| 比较日期差 dtEnd 格式为日期型或者有效日期格式字符串
+//sdate.dateDiff(date,strInterval, dtEnd)
+//date : 日期基数
+// strInterval : 
+   's': 秒
+   'n': 分
+   'h': 时
+   'd': 天
+   'w': 周
+   'q': 季【三个月】
+   'm': 月
+   'y': 年
+// dtEnd : 比较日期
+```
 - datePart
+
+```
     //| 取得日期数据信息  
     //| 参数 interval 表示数据类型  
     //| y 年 m月 d日 w星期 ww周 h时 n分 s秒  
+sdate.datePart(date,interval)
+```
 - toString
-    //| 日期输出字符串，重载了系统的toString方法  
 
+```
+//| 日期输出字符串，重载了系统的toString方法  
+Date.prototype.toString = function(pattern) {
+        return format(this,'yyyy-MM-dd hh:mm:ss');
+    }
+```

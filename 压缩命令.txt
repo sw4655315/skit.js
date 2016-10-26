@@ -1,0 +1,3 @@
+java -jar yuicompressor-2.4.2.jar skit.js -o skit.min.js
+java -jar yuicompressor-2.4.2.jar sdate.js -o sdate.min.js
+java -jar yuicompressor-2.4.2.jar smath.js -o smath.min.js

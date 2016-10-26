@@ -6,6 +6,9 @@ var sdate = {};
     // 判断闰年  
     //--------------------------------------------------- 
     function isLeapYear(date){
+        if(typeof date == 'string'){
+            date = new Date(date);
+        }
         return (0 == date.getYear() % 4 && ((date.getYear() % 100 != 0) || (date.getYear() % 400 == 0)));
     }
 
@@ -173,25 +176,25 @@ var sdate = {};
     };
 
     
-    Date.prototype.Format = function(formatStr) {
+    Date.prototype.format = function(formatStr) {
         return format(this,formatStr);
     }
 
-    Date.prototype.DatePart = function(interval) {
+    Date.prototype.datePart = function(interval) {
         return datePart(this,interval);
     }
 
     //+---------------------------------------------------  
     //| 比较日期差 dtEnd 格式为日期型或者有效日期格式字符串  
     //+---------------------------------------------------  
-    Date.prototype.DateDiff = function(strInterval, dtEnd) {
+    Date.prototype.dateDiff = function(strInterval, dtEnd) {
         return dateDiff(this,strInterval, dtEnd);
     }
 
-        //+---------------------------------------------------  
+    //+---------------------------------------------------  
     //| 比较日期差 dtEnd 格式为日期型或者有效日期格式字符串  
     //+---------------------------------------------------  
-    Date.prototype.DateAdd = function(strInterval, num) {
+    Date.prototype.dateAdd = function(strInterval, num) {
         return dateAdd(this,strInterval, num);
     }
 
@@ -202,20 +205,13 @@ var sdate = {};
         return format(this,'yyyy-MM-dd hh:mm:ss');
     }
 
-
     //+---------------------------------------------------  
     //| 比较日期差 dtEnd 格式为日期型或者有效日期格式字符串  
     //+---------------------------------------------------  
-    Date.prototype.DateDiff = function(strInterval, dtEnd) {
+    Date.prototype.dateDiff = function(strInterval, dtEnd) {
         return dateDiff(this,strInterval, dtEnd);
     }
 
-    //+---------------------------------------------------  
-    //| 日期输出字符串，重载了系统的toString方法  
-    //+---------------------------------------------------  
-    Date.prototype.toString = function(pattern) {
-        return format(this,'yyyy-MM-dd hh:mm:ss');
-    }
     sdate = {
         isLeapYear:isLeapYear
         ,format:format
